@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import express from "express";
-import { validateCreateRoom } from "./validateCreateRoom";
-import { withServer } from "../test/http";
+import { validateCreateRoom } from "../../../backend/src/middlewares/validateCreateRoom";
+import { withServer } from "../helpers/http";
 
 test("validateCreateRoom rejects invalid groupSize before the handler runs", async () => {
   const app = express();

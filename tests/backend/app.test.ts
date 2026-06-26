@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import express from "express";
-import app from "./app";
-import { registerRequestMiddlewares, registerTerminalMiddlewares } from "./middlewares";
-import { withServer } from "./test/http";
+import app from "../../backend/src/app";
+import {
+  registerRequestMiddlewares,
+  registerTerminalMiddlewares,
+} from "../../backend/src/middlewares";
+import { withServer } from "./helpers/http";
 
 test("POST /api/rooms returns 201 for a valid room request", async () => {
   await withServer(app, async (baseUrl) => {
